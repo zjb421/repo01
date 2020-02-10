@@ -4,7 +4,8 @@ struct LinkedNode
     struct LinkedNode *next;
 }
 
-void srt_LL(node *ls) 
+//Problem 1
+void srt_LL(LinkedNode *ls) 
 {
 	struct LinkedNode *node=NULL;
 	struct LinkedNode *head = NULL;
@@ -25,4 +26,25 @@ void srt_LL(node *ls)
 		}
 		node = node->next
 	}
+}
+
+//Problem 4
+
+LinkedNode commElem(struct LinkedNode *l, struct LinkedNode *m) {
+	struct LinkedNode *current;
+
+	while(l != NULL)
+	{
+		current = m;
+		while (current != NULL) 
+		{
+			if(current->data == l->data)
+			{
+				return current;
+			}
+			current = current->next;
+		}
+		l = l->next;
+	}
+	return NULL;
 }
